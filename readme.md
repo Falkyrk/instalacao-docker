@@ -31,21 +31,21 @@
 
 ### Atualização dos pacotes
 
-    ```console
+```console
     $ sudo apt update
-    ```
+```
 
 ### Atualização do sistema
 
-    ```console
+```console
     $ sudo apt upgrade
-    ```
+```
 
 ### Reiniciar o sistema
 
-    ```console
+```console
     $ reboot
-    ```
+```
 
 ### Instalação do Docker Desktop
 
@@ -56,11 +56,11 @@
     1 - Clicar com o botão direito do mouse sobre o arquivo e escolher Software install
 
     2 - Abrir o terminal do linux e ir até a pasta(diretório) download e executar o comando de instalação:
-        ```console
+```console
         $ sudo apt install ./docker-desktop-4.10.1-amd64.deb
-        ```
+```
     ###Caso retorne a mensagem de erro referente ao docker-ce e/ou docker-cli, execute os comandos abaixo:
-        ```console
+```console
         $ sudo apt-get update
 
         $ sudo apt-get install \
@@ -68,36 +68,40 @@
         curl \
         gnupg \
         lsb-release
-        ```
+```
     ### Adicionar as chaves GPG oficiais do docker
-        ```console
+```console
         $sudo mkdir -p /etc/apt/keyrings
         $curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
-        ```
+```
     ### Use o comando abaixo para carregar o repositorio de pacotes
-        ```console
+```console
         $echo \
     "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
     $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-    ```
+```
 
     ### Instalação do Docker Engine
-    ```console
+```console
     $sudo apt-get update
     $sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
-    ```
+```
 
     ### Após a instalação das dependencias você deve executar o comando de instalação do docker desktop
-        ```console
+```console
         $ sudo apt install ./docker-desktop-4.10.1-amd64.deb
-        ```
+```
 
 ## Instalando a imagem e o Container de Mysql no docker
 
 ### Vamos usar volume neste exemplo
 
     Crie uma pasta(diretorio) chamada dta_docker no home do usuario, execute o seguinte comando:
-    ```console
+```console
     $ docker run --name servidor-mysql -v ~/data_docker:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=123456 -d mysql:8.0.29
-    ```
+```
     Agora, abra o docker-desktop e veja o seu container rodando.
+    
+<div align="Center">
+<img src="dockerdesktop.png" width="650" height="350"/>
+</div>
